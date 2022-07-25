@@ -1,0 +1,58 @@
+{
+  "root": "packages/mjl/radix-ui-dashboard/radix-ui-dashboard",
+  "sourceRoot": "packages/mjl/radix-ui-dashboard/radix-ui-dashboard",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "root": "packages/mjl/radix-ui-dashboard/radix-ui-dashboard",
+        "outputPath": "dist/packages/mjl/radix-ui-dashboard/radix-ui-dashboard"
+      },
+      "configurations": {
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/next:server",
+      "options": {
+        "buildTarget": "mjl-radix-ui-dashboard-radix-ui-dashboard:build",
+        "dev": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "mjl-radix-ui-dashboard-radix-ui-dashboard:build:production",
+          "dev": false
+        }
+      }
+    },
+    "export": {
+      "executor": "@nrwl/next:export",
+      "options": {
+        "buildTarget": "mjl-radix-ui-dashboard-radix-ui-dashboard:build:production"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/packages/mjl/radix-ui-dashboard/radix-ui-dashboard"
+      ],
+      "options": {
+        "jestConfig": "packages/mjl/radix-ui-dashboard/radix-ui-dashboard/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/mjl/radix-ui-dashboard/radix-ui-dashboard/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
