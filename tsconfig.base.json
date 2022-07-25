@@ -17,7 +17,8 @@
     "paths": {
       "@radix-ui-dashboard/components": [
         "packages/components/components/src/index.ts"
-      ]
+      ],
+      "@radix-ui-dashboard/types": ["packages/types/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

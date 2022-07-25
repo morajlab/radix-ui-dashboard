@@ -3,6 +3,7 @@
   "version": 2,
   "projects": {
     "components-components": "packages/components/components",
-    "components-components-e2e": "packages/components/components-e2e"
+    "components-components-e2e": "packages/components/components-e2e",
+    "types": "packages/types"
   }
 }
