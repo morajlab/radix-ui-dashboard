@@ -4,6 +4,8 @@
   "projects": {
     "components-components": "packages/components/components",
     "components-components-e2e": "packages/components/components-e2e",
+    "dashboard-dashboard": "packages/dashboard/dashboard",
+    "dashboard-dashboard-e2e": "packages/dashboard/dashboard-e2e",
     "theme-theme": "packages/theme/theme",
     "types": "packages/types"
   }

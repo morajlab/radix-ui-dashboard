@@ -1,0 +1,85 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/dashboard/dashboard/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/packages/dashboard/dashboard",
+        "index": "packages/dashboard/dashboard/src/index.html",
+        "baseHref": "/",
+        "main": "packages/dashboard/dashboard/src/main.tsx",
+        "polyfills": "packages/dashboard/dashboard/src/polyfills.ts",
+        "tsConfig": "packages/dashboard/dashboard/tsconfig.app.json",
+        "assets": [
+          "packages/dashboard/dashboard/src/favicon.ico",
+          "packages/dashboard/dashboard/src/assets"
+        ],
+        "styles": ["packages/dashboard/dashboard/src/styles.css"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "packages/dashboard/dashboard/src/environments/environment.ts",
+              "with": "packages/dashboard/dashboard/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "dashboard-dashboard:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "dashboard-dashboard:build:development"
+        },
+        "production": {
+          "buildTarget": "dashboard-dashboard:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/dashboard/dashboard/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/dashboard/dashboard"],
+      "options": {
+        "jestConfig": "packages/dashboard/dashboard/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
