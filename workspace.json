@@ -4,6 +4,7 @@
   "projects": {
     "components-components": "packages/components/components",
     "components-components-e2e": "packages/components/components-e2e",
+    "theme-theme": "packages/theme/theme",
     "types": "packages/types"
   }
 }
