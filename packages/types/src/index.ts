@@ -1,5 +1,3 @@
-import type { IBareProps } from '@morajlab/npm.react.components.bare';
-import type { MLComponent } from '@morajlab/npm.react.types.common';
+import type { FunctionComponent } from 'react';
 
-export interface IRadixUIDashProps extends IBareProps {}
-export type RadixUIDashComponent<T = {}> = MLComponent<T>;
+export type RadixUIDashComponent<T = {}> = FunctionComponent<T>;

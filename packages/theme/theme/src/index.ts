@@ -1,9 +1,7 @@
 import { createStitches } from '@stitches/react';
 
-export const stitches = createStitches({
+export const { styled } = createStitches({
   theme: {
     colors: {},
   },
 });
-
-export default stitches;
